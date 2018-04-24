@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron">
+            <h4 class="text-center">Всички полета със * са задължителни!</h4>
+            <form class="form-row" action="{{ path('register') }}" method="post">
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input type="text" name="appbundle_user[username]" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Потребителско име*">
+                </div>
+
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-key"></i></div>
+                    </div>
+                    <input type="password" name="appbundle_user[password][first]" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Парола*">
+                </div>
+
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-key"></i></div>
+                    </div>
+                    <input type="password" name="appbundle_user[password][second]" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Потвърдете паролата*">
+                </div>
+
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                    </div>
+                    <input type="text" name="appbundle_user[email]" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Email*">
+                </div>
+
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fab fa-facebook-f"></i></div>
+                    </div>
+                    <input type="text" name="appbundle_user[facebookLink" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Facebook-линк">
+                </div>
+
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input type="text" name="appbundle_user[firstName]" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Име*">
+                </div>
+
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input type="text" name="appbundle_user[lastName]" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Фамилия*">
+                </div>
+
+                {{ form_row(form._token) }}
+
+                <button type="submit" class="btn btn-primary mb-2">Регестрирай се!</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

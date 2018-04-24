@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron">
+            <form class="form-row" action="{{ path('event_update', {'id': event.id}) }}" method="post">
+                <label class="sr-only" for="inlineFormInputGroupUsername2">Name</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" value="{{ event.name }}" name="appbundle_event[name]">
+                </div>
+
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-file-alt"></i></div>
+                    </div>
+                    <textarea type="" class="form-control" rows="5" id="inlineFormInputGroupUsername2"  name="appbundle_event[description]">{{ event.description }}</textarea>
+                </div>
+
+                <div class="col-lg-12" style="padding-bottom: 10px ">
+                    {{ form_label(form.eventTime, " ") }}
+                    {{ form_widget(form.eventTime) }}
+                </div>
+
+                <div class="col-lg-12" style="padding-bottom: 10px ">
+                    {{ form_label(form.eventDate, " ") }}
+                    {{ form_widget(form.eventDate) }}
+                </div>
+
+                <div class="col-lg-12" style="padding-bottom: 10px ">
+                    {{ form_label(form.place, " ") }}
+                    {{ form_widget(form.place) }}
+                </div>
+                <div class="col-lg-12" style="padding-bottom: 10px ">
+                    {{ form_label(form.EventCategory, ' ') }}
+                    {{ form_widget(form.EventCategory) }}
+                </div>
+                {{ form_row(form._token) }}
+
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <script
+                    src="http://code.jquery.com/jquery-3.3.1.js"
+                    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                    crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+            <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <link rel="stylesheet" href="{{ asset('css/customCss.css') }}">
+            <link rel="stylesheet" href="{{ asset('fonts/web-fonts-with-css/css/fontawesome-all.css') }}">
+            <script src="js/customJs.js"></script>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block nav %}
+            <nav class="navbar navbar-expand-lg navbar-collapse bg-light">
+                <a class="navbar-brand" href="{{ path('index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item col-lg-3">
+                            <a class="nav-link" href="{{ path('index') }}">Начало</a>
+                        </li>
+                        <li class="nav-item col-lg-3">
+                            <a class="nav-link" href="{{ path('places_show') }}">Локации</a>
+                        </li>
+                        <li class="nav-item col-lg-3">
+                            <a class="nav-link" href="{{ path('events_show') }}">Събития</a>
+                        </li>
+                        <li class="nav-item col-lg-3">
+                            <a class="nav-link" href="{{ path('project_info') }}">Информаця</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main>
+                {% if app.user %}
+                    <div class="row justify-content-center second-navbar">
+                        <div class="col-lg-2 col-12 text-center"><button class="btn btn-outline-dark"><i class="sec-menu-btn fas fa-plus"></i><a href="{{ path('event_add') }}"> Добави събитие</a></button></div>
+                        <div class="col-lg-2 col-12 text-center"><button class="btn btn-outline-dark"><i class=" sec-menu-btn fas fa-user" aria-hidden="true"></i><a href="{{ path('user_profile') }}"> Профил</a></button></div>
+                        <div class="col-lg-2 col-12 text-center"><button class="btn btn-outline-dark"><i class=" sec-menu-btn fas fa-sign-out-alt" aria-hidden="true"></i><a href="{{ path('logout') }}"> Изход</a></button></div>
+                    </div>
+                 {% else %}
+                     <div class="row justify-content-center second-navbar">
+                         <div class="col-lg-2 col-12 text-center"><button class="btn btn-outline-dark"><i class="sec-menu-btn fas fa-sign-in-alt"></i><a href="{{ path('login') }}"> Вход</a></button></div>
+                         <div class="col-lg-2 col-12 text-center"><button class="btn btn-outline-dark"><i class=" sec-menu-btn fas fa-user" aria-hidden="true"></i><a href="{{ path('register') }}"> Регистрация</a></button></div>
+                     </div>
+                {% endif %}
+
+        {% endblock %}
+        {% block body %}
+
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

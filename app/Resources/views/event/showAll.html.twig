@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div id="accordion" class="col-lg-2 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        Категории
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            {% for category in categories %}
+                                <li><a href="{{ path('events_category', {'id':category.id}) }}">{{ category.name }}</a></li>
+                            {% endfor %}
+                            <li><a href="{{ path('game') }}">ClickTrain</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="jumbotron">
+                {% for event in eventsArr  %}
+                    <h1>{{ event.name }}</h1>
+                    <p class="text-truncate">{{ event.description }}</p>
+                    <button class="btn btn-primary"><a href="{{ path('events_by_id', {'id': event.id}) }}">Виж още</a></button>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

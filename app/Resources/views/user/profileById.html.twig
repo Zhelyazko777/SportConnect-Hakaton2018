@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Здравейте, {{ user.username }}!</h1>
+            <h4>Събития на потребителя: </h4>
+            <hr>
+            {%  for event in user.events  %}
+                <div><h4>Заглавие на събитието: </h4><a href="{{ path('events_by_id', {'id': event.id}) }}">{{ event.name }}</a></div>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

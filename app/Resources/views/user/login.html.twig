@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron">
+            <form class="form-row" action="{{ path('login') }}" method="post">
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input type="text" name="_username" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Потребителско име">
+                </div>
+                <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-key"></i></div>
+                    </div>
+                    <input type="password" name="_password" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Парола">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <p>Брой кликания: </p><div id="result"></div>
+            <button id="btn" class="btn btn-primary">Click</button>
+            <button id="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var score = 0;
+            $("#btn").click(function () {
+                score++;
+                if(score >= 10){
+                    $('#result').text(score + "Внимание!Опастност от претрениране!");
+                }
+                else{
+                    $('#result').text(score);
+                }
+            })
+
+            $("#reset").click(function () {
+                score = 0;
+                $('#result').text(score);
+            })
+        })
+
+    </script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="jumbotron">
+                {%  for place in places %}
+                    <h1>{{ place.name }}</h1>
+                    <p>{{ place.address }}</p>
+                    
+                    <hr>
+                {%  endfor %}
+
+            <button class="btn btn-primary"><a href="{{ path('place_add') }}">Добави локация</a></button>
+        </div>
+    </div>
+
+{% endblock %}

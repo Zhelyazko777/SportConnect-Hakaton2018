@@ -1,0 +1,69 @@
+main{
+    background: url("../images/background2.jpg");
+    height: 1000px;
+    background-size: cover;
+}
+a{
+    color: black;
+}
+.navbar{
+    background-color: white!important;
+    color: white;
+}
+nav{
+
+    border-bottom: 1px solid black;
+}
+nav a{
+    color: rgb(23, 0, 95);
+    font-size: 20px;
+    font-weight: bold;
+}
+a:hover{
+    color: #d8d9da;
+}
+.navbar-toggler{
+    border-color: rgb(23, 0, 95);
+}
+.custom-toggler .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(23, 0, 95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.second-navbar div i{
+    color: black;
+}
+
+body .row{
+    padding-top: 2%;
+}
+.jumbotron{
+    margin-top: 5%;
+    opacity: 0.8;
+}
+
+.btn-outline-dark:hover > .sec-menu-btn{
+    color: white;
+}
+.btn-outline-dark:hover > a{
+    text-decoration: none;
+    color: white;
+}
+#main_container{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.btn-outline-dark{
+    width: 100%;
+}
+#index_video{
+    margin-top: 5%;
+}
+li{
+    list-style: none;
+}
+#accordion{
+    margin-top: 5%;
+}
+#jumbotron_id{
+    margin-left: 150px;
+}
